@@ -1,0 +1,194 @@
+/* 1. Estrutura Geral com Grid */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main (flexível), Footer */
+    min-height: 100vh;
+}
+
+/* 2. Classe .container para centralizar conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* 3. Estilos do Header (Usando Flexbox para alinhar) */
+.main-header {
+    background-color: var(--color-white);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-neutral-light);
+    box-shadow: var(--box-shadow);
+}
+
+/* Usa Flexbox para o .container dentro do header*/
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 4. Estilos do Main e Footer */
+main {
+    padding: var(--spacing-xl) 0; /* Espaçamento vertical */
+}
+
+/* Estilo básico do rodapé */
+footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-neutral-light);
+    padding: var(--spacing-lg);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+.about-content {
+    display: flex; /* Coloca a imagem e o texto lado a lado */
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    gap: var(--spacing-xl); /* Espaçamento entre a imagem e o texto */
+    margin-top: var(--spacing-lg);
+}
+
+.about-content img {
+    width: 100%;
+    max-width: 3000px; /* Limita o tamanho da imagem no desktop */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    flex-shrink: 0; /* Impede que a imagem encolha muito */
+}
+
+.about-content div { /* estilo para o texto ao lado da imagem */
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+
+.mission-grid article h3 {
+    color: var(--color-secondary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mission-grid article ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: var(--spacing-sm);
+}
+
+.mission-grid article ul li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-neutral-dark);
+}
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/cachorro-resgatado.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--color-neutral-light);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+.about-content {
+    max-width: 800px; /* Limita a largura do texto para leitura */
+    margin: var(--spacing-lg) auto 0 auto; /* Centraliza o bloco de texto */
+    line-height: 1.8; /* Espaçamento entre linhas mais confortável */
+}
+.mission-grid article {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center; /* força todo o texto a centralizar */
+    height: 100%; /* Garante altura igual para os 3 cards */
+}
+
+.mission-grid article h3 {
+    color: var(--color-secondary); /* Título laranja */
+    font-size: 1.5rem;
+}
+
+.mission-grid article p,
+.mission-grid article ul {
+    margin-top: var(--spacing-md);
+    color: var(--color-neutral-dark);
+}
+
+.mission-grid article ul {
+    list-style: none;
+    padding: 0;
+}
+#sobre h2 {
+    text-align: center;
+    font-size: 2.2rem; 
+    margin-bottom: var(--spacing-lg);
+}
+.mission-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    height: 100%;
+
+    /* mágica do Flexbox para centralizar tudo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: flex-start; /* Alinha no topo */
+}
+.card-icon {
+    font-size: 3rem; /* Tamanho grande para o ícone */
+    color: var(--color-secondary); /* Laranja */
+    margin-bottom: var(--spacing-md);
+    line-height: 1;
+}
+
+/* Estilo do Título do Card (Missão, Visão, etc) */
+.mission-card h3 {
+    color: var(--color-primary-dark); /* Título azul escuro */
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Estilo dos Textos e Listas */
+.mission-card p,
+.mission-card ul {
+    margin-top: 0;
+    color: var(--color-neutral-dark);
+    line-height: 1.7;
+    text-align: center; /* Garante que o texto fique centralizado */
+}
+
+.mission-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-sm);
+}
+
+.mission-card ul li {
+    margin-bottom: var(--spacing-xs);
+}

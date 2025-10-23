@@ -4,79 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WUPEVA - Resgate e Adoção de Cães</title>
-    </head>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
 
-    <header>
-        <a href="index.html">
-            <picture>
-                <source srcset="assets/images/logo.webp" type="image/webp">
-                <source srcset="assets/images/logo.png" type="image/png">
-                <img src="assets/images/logo.png" alt="Logo da WUPEVA" style="width:100%; max-width:200px; height:auto;">
-            </picture>
-        </a>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <picture>
+                    <source srcset="assets/images/logo.webp" type="image/webp">
+                    <source srcset="assets/images/logo.png" type="image/png">
+                    <img src="assets/images/logo.png" alt="Logo da WUPEVA" style="width:100%; max-width:180px; height:auto;">
+                </picture>
+            </a>
+            
+            <button class="hamburger-menu" aria-label="Abrir Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <p>Amor, Resgate e um Novo Começo para Cães de Rua</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Como Ajudar</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="dropdown">
+                        <a href="projetos.html">Como Ajudar</a>
+                        <ul class="dropdown-content">
+                            <li><a href="projetos.html#voluntariado">Seja Voluntário</a></li>
+                            <li><a href="projetos.html#doacao">Faça uma Doação</a></li>
+                            <li><a href="projetos.html#nossos-resgatados">Nossos Resgatados</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="historia.html">Nossa História</a></li>
+                    
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bem-vindo à WUPEVA</h1>
+                <p>Resgatando vidas, unindo famílias. Cada latido conta.</p>
+                <div class="btn-group">
+                    <a href="projetos.html" class="btn btn-primary">Conheça nossos cães</a>
+                    <a href="cadastro.html" class="btn btn-secondary">Seja um voluntário</a>
+                </div>
+            </div>
+        </section>
+
         <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>A WUPEVA é uma organização sem fins lucrativos dedicada ao resgate, reabilitação e adoção de cães em situação de rua. Acreditamos que todo animal merece uma segunda chance.</p>
-            
-            <picture>
-                    <source srcset="assets/images/cachorro-resgatado.webp" type="image/webp">
-                    <source srcset="assets/images/cachorro-resgatado.jpg" type="image/jpeg">
-    
-                    <img src="assets/images/cachorro-resgatado" alt="Indo para um novo lar." style="width: 100%; max-width: 250px; height: auto;">
-
-            </picture>
-...
-            
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: var(--spacing-lg);">Sobre Nós</h2>
+                
+                <div class="about-content">
+                    <div>
+                        <p>A WUPEVA é uma organização sem fins lucrativos dedicada ao resgate, reabilitação e adoção de cães em situação de rua. Acreditamos que todo animal merece uma segunda chance.</p>
+                        <p style="margin-top: var(--spacing-sm);">Nossa equipe de voluntários trabalha incansavelmente para garantir que cada cão receba os cuidados veterinários necessários, alimentação adequada e muito amor, enquanto aguardam um lar definitivo. Nosso compromisso é com a vida e o bem-estar animal.</p>
+                        <p style="margin-top: var(--spacing-sm);">Junte-se a nós nesta causa e faça a diferença!</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="missao">
-            <h2>Nossa Missão, Visão e Valores</h2>
-            <article>
-                <h3>Missão</h3>
-                <p>Resgatar cães vulneráveis, oferecer cuidados veterinários, e encontrar lares amorosos e responsáveis para eles.</p>
-            </article>
-            <article>
-                <h3>Visão</h3>
-                <p>Ser referência no combate ao abandono de animais, conscientizando a sociedade sobre a posse responsável.</p>
-            </article>
-            <article>
-                <h3>Valores</h3>
-                <ul>
-                    <li>Compaixão</li>
-                    <li>Transparência</li>
-                    <li>Comprometimento</li>
-                    <li>Respeito à vida</li>
-                </ul>
-            </article>
+        <section id="missao" style="background-color: var(--color-neutral-light); padding: var(--spacing-xl) 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Nossa Missão, Visão e Valores</h2>
+                
+                <div class="grid mission-grid">
+
+                    <article class="col-span-4 md-col-span-12 mission-card">
+                        <i class="fas fa-bullseye card-icon"></i>
+                        <h3>Missão</h3>
+                        <p>
+                            Atuar na linha de frente do resgate, oferecendo reabilitação física e emocional completa, e reconectar cada vida resgatada a uma família que a valorize, criando lares permanentes e cheios de afeto.
+                        </p>
+                    </article>
+
+                    <article class="col-span-4 md-col-span-12 mission-card">
+                        <i class="fas fa-eye card-icon"></i>
+                        <h3>Visão</h3>
+                        <p>
+                            Ser um pilar na comunidade, inspirando uma cultura de respeito e empatia animal. Almejamos ir além do resgate, tornando-nos uma força de transformação social através da educação sobre a posse responsável.
+                        </p>
+                    </article>
+
+                    <article class="col-span-4 md-col-span-12 mission-card">
+                        <i class="fas fa-heart card-icon"></i>
+                        <h3>Valores</h3>
+                        <ul style="text-align: left; margin: 0 auto; display: inline-block;">
+                            <li><i class="fas fa-check" style="color: var(--color-secondary); margin-right: 8px;"></i><strong>Compaixão:</strong> Agir com empatia em cada resgate.</li>
+                            <li><i class="fas fa-check" style="color: var(--color-secondary); margin-right: 8px;"></i><strong>Transparência:</strong> Gerir nossos recursos com total clareza.</li>
+                            <li><i class="fas fa-check" style="color: var(--color-secondary); margin-right: 8px;"></i><strong>Comprometimento:</strong> Dedicação do resgate à adoção.</li>
+                            <li><i class="fas fa-check" style="color: var(--color-secondary); margin-right: 8px;"></i><strong>Respeito à Vida:</strong> Valorizar cada animal como único.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco para mais informações:</p>
-            <ul>
-                <li><strong>Email:</strong> contato@wupeva.org</li>
-                <li><strong>Telefone:</strong> (11) 99999-8888</li>
-                <li><strong>Endereço:</strong> Rua da Esperança, 123, Flores da Cunha - RS</li>
-            </ul>
-        </section>
-    </main>
+        <section id="contato" class="container">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações:</p>
+        <ul>
+            <li><strong>Email:</strong> contato@wupeva.org</li>
+            <li><strong>Telefone:</strong> (54) 97741-1488</li>
+            <li><strong>Endereço:</strong> Rua Borges de Medeiros, 334, Flores da Cunha - RS</li>
+        </ul>
+    </section>
 
-    <footer>
+    </main> <footer>
         <p>&copy; 2025 WUPEVA. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="assets/js/main.js" defer></script>
 
 </body>
 </html>

@@ -1,0 +1,39 @@
+:root {
+    /* 1. PALETA DE CORES */
+    --color-primary-dark: #274060;   /* Azul escuro (Texto, Títulos) */
+    --color-primary: #3a7ca5;      /* Azul principal (Logo, Links) */
+    --color-secondary: #ff9f1c;   /* Laranja (Destaques, Botões) */
+    --color-secondary-light: #ffc971; /* Laranja claro */
+    --color-accent: #d98c4a;      /* Caramelo (Inspirado no Spot) */
+    
+    --color-neutral-dark: #333;   /* Texto comum */
+    --color-neutral-medium: #888; /* Texto sutil, bordas */
+    --color-neutral-light: #f4f4f4; /* Fundo de seções */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    
+    /* Cores de Feedback (para formulários) */
+    --color-success: #4CAF50;
+    --color-error: #D32F2F;
+
+    /* 2. TIPOGRAFIA */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+    --font-fallback-serif: 'Georgia', serif;
+    --font-fallback-sans: 'Arial', 'Helvetica', sans-serif;
+    --font-monospace: 'Courier New', monospace;
+
+    /* 3. SISTEMA DE ESPAÇAMENTO MODULAR
+      (8px, 16px, 24px, 32px, 48px, 64px)
+    */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+
+    /* Outras variáveis úteis */
+    --border-radius: 4px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
