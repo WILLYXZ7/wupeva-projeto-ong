@@ -1,8 +1,6 @@
-// assets/js/modules/feedback.js
-
 export function initFeedback() {
 
-    // --- LÓGICA DO MODAL ---
+    // MODAL
     const modalOverlay = document.getElementById('test-modal');
     const showModalBtn = document.getElementById('show-modal-btn');
     const closeModalBtn = document.getElementById('close-modal-btn');
@@ -25,8 +23,7 @@ export function initFeedback() {
             if (e.target === modalOverlay) closeModal();
         });
     }
-
-    // --- LÓGICA DO TOAST ---
+    // TOAST
     const showToastBtn = document.getElementById('show-toast-btn');
     const toastContainer = document.getElementById('toast-container');
 

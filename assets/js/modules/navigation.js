@@ -1,5 +1,3 @@
-// assets/js/modules/navigation.js
-
 export function initNavigation() {
     
     const hamburger = document.querySelector('.hamburger-menu');
@@ -18,8 +16,6 @@ export function initNavigation() {
             hamburger.setAttribute('aria-expanded', !isExpanded);
         });
     }
-
-    // --- CÓDIGO DO DROPDOWN MOBILE ---
     const dropdownToggle = document.querySelector('.dropdown > a');
     const dropdownMenu = document.querySelector('.dropdown-content');
     const dropdownLi = document.querySelector('.dropdown');

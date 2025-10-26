@@ -1,5 +1,3 @@
-// assets/js/modules/form_masks.js
-
 export function initFormMasks() {
 
     const inputCPF = document.getElementById('cpf');

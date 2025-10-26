@@ -293,10 +293,6 @@ form .btn-group {
 .toast.hide {
     animation: slideOut 0.5s forwards;
 }
-/* ARQUIVO DE COMPONENTES: Adicionar no final */
-
-/* 8. Estilos de Validação de Formulário
------------------------------------------------*/
 .error-message {
     color: var(--color-error); /* Vermelho */
     font-size: 0.85rem;
