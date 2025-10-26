@@ -293,6 +293,35 @@ form .btn-group {
 .toast.hide {
     animation: slideOut 0.5s forwards;
 }
+/* ARQUIVO DE COMPONENTES: Adicionar no final */
+
+/* 8. Estilos de Validação de Formulário
+-----------------------------------------------*/
+.error-message {
+    color: var(--color-error); /* Vermelho */
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: none; /* Escondido por padrão */
+    margin-top: -12px; /* Puxa para perto do input */
+    margin-bottom: 8px;
+}
+
+/* Quando o input estiver inválido (via JS), mostramos a msg */
+input.invalid + .error-message {
+    display: block;
+}
+
+/* Borda vermelha no input inválido */
+input.invalid {
+    border-color: var(--color-error);
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+}
+
+/* Borda verde no input válido */
+input.valid {
+    border-color: var(--color-success);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
 @keyframes slideIn {
     to {
         opacity: 1;
