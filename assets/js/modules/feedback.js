@@ -11,9 +11,22 @@ export function initFeedback() {
     }
 
     function closeModal() {
-        if (modalOverlay) modalOverlay.classList.remove('active');
+    if (modalOverlay) modalOverlay.classList.remove('active');
     }
 
+
+    // Fecha o modal ao pressionar a tecla ESC
+    function handleEscKey(event) {
+    if (event.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+        closeModal();
+    }
+    }
+    document.addEventListener('keydown', handleEscKey);
+
+
+    if (showModalBtn) {
+    showModalBtn.addEventListener('click', openModal);
+    }
     if (showModalBtn) showModalBtn.addEventListener('click', openModal);
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
     if (closeModalBtn2) closeModalBtn2.addEventListener('click', closeModal);
