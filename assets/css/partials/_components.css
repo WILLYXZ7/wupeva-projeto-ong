@@ -12,13 +12,11 @@
     transition: all 0.3s ease;
 }
 
-/* Botão Principal (Laranja) */
 .btn-primary {
     background-color: var(--color-secondary);
     color: var(--color-primary-dark);
 }
 
-/* Estados do Botão Principal */
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: var(--color-secondary-light);
@@ -31,11 +29,10 @@
     transform: translateY(0);
 }
 
-/* Botão Secundário*/
 .btn-secondary {
-    background-color: var(--color-primary); /* Fundo azul principal */
-    color: var(--color-white); /* Texto branco */
-    border-color: var(--color-primary); /* Borda azul */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
 }
 
 .btn-secondary:hover,
@@ -51,18 +48,18 @@
     transform: translateY(0);
 }
 
-/* Botão Desabilitado */
 .btn:disabled {
-    background-color: var(--color-neutral-medium);
-    color: var(--color-neutral-light);
+    background-color: var(--color-text-light);
+    color: var(--color-card-bg);
     cursor: not-allowed;
     opacity: 0.6;
 }
+
 .card {
-    background-color: var(--color-white);
+    background-color: var(--color-card-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    overflow: hidden; /* Para a imagem não "vazar" */
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
@@ -73,8 +70,9 @@
 
 .card-image {
     width: 100%;
-    height: 300px; 
-    object-fit: contain;
+    height: 300px;
+    /* Garante que a imagem inteira caiba, sem cortar */
+    object-fit: contain; 
 }
 
 .card-content {
@@ -83,15 +81,16 @@
 
 .card-title {
     font-size: 1.5rem;
-    color: var(--color-primary-dark);
+    color: var(--color-text);
     margin-bottom: var(--spacing-sm);
 }
 
 .card-text {
     font-size: 1rem;
-    color: var(--color-neutral-dark);
+    color: var(--color-text);
     margin-bottom: var(--spacing-md);
 }
+
 .badge {
     display: inline-block;
     padding: 4px var(--spacing-xs);
@@ -99,14 +98,14 @@
     font-weight: 700;
     text-transform: uppercase;
     border-radius: var(--border-radius);
-    background-color: var(--color-neutral-light);
-    color: var(--color-neutral-dark);
+    background-color: var(--color-background-section);
+    color: var(--color-text-light);
     margin-right: var(--spacing-xs);
 }
 
 .badge-primary {
-    background-color: var(--color-primary-light);
-    color: var(--color-primary-dark);
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
 }
 
 .badge-secondary {
@@ -121,7 +120,7 @@ form {
 }
 
 fieldset {
-    border: 1px solid var(--color-neutral-medium);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     padding: var(--spacing-md);
 }
@@ -130,10 +129,11 @@ legend {
     font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1.2rem;
-    color: var(--color-primary-dark);
+    color: var(--color-text);
     padding: 0 var(--spacing-xs);
     margin-left: var(--spacing-sm);
 }
+
 form div {
     display: flex;
     flex-direction: column;
@@ -142,7 +142,7 @@ form div {
 
 label {
     font-weight: 600;
-    color: var(--color-neutral-dark);
+    color: var(--color-text);
 }
 
 input[type="text"],
@@ -153,28 +153,21 @@ select,
 textarea {
     width: 100%;
     padding: var(--spacing-sm);
-    border: 1px solid var(--color-neutral-medium);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     font-family: var(--font-secondary);
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
-/* Validação Visual*/
 input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 5px var(--color-primary-light);
+    box-shadow: 0 0 5px var(--color-primary);
 }
 
-/* Validação HTML5 */
-input:valid {
-    border-color: var(--color-success);
-}
-
-input:invalid {
-    border-color: var(--color-error);
-}
 .checkbox-group {
     flex-direction: row;
     align-items: center;
@@ -186,12 +179,12 @@ input[type="checkbox"] {
     margin-right: var(--spacing-xs);
 }
 
-/* Botões dentro do formulário */
 form .btn-group {
     flex-direction: row;
     gap: var(--spacing-md);
     margin-top: var(--spacing-sm);
 }
+
 .alert {
     padding: var(--spacing-md);
     margin: var(--spacing-md) 0;
@@ -200,20 +193,21 @@ form .btn-group {
     font-weight: 500;
 }
 .alert-success {
-    background-color: #E8F5E9; /* Verde claro */
+    background-color: #E8F5E9;
     color: var(--color-success);
     border-color: var(--color-success);
 }
 .alert-error {
-    background-color: #FFEBEE; /* Vermelho claro */
+    background-color: #FFEBEE;
     color: var(--color-error);
     border-color: var(--color-error);
 }
 .alert-info {
-    background-color: #E3F2FD; /* Azul claro */
+    background-color: #E3F2FD;
     color: var(--color-primary);
     border-color: var(--color-primary);
 }
+
 .modal-overlay {
     display: none;
     position: fixed;
@@ -230,13 +224,14 @@ form .btn-group {
     display: flex;
 }
 .modal-content {
-    background-color: var(--color-white);
+    background-color: var(--color-card-bg);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 500px;
     position: relative;
+    /* Animação de entrada */
     transform: translateY(-50px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -253,24 +248,25 @@ form .btn-group {
     border: none;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-neutral-medium);
+    color: var(--color-text-light);
     cursor: pointer;
     line-height: 1;
 }
 .modal-close:hover {
-    color: var(--color-neutral-dark);
+    color: var(--color-text);
 }
 .modal-header {
-    border-bottom: 1px solid var(--color-neutral-light);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
 }
 .modal-header h2 {
-    color: var(--color-primary-dark);
+    color: var(--color-text);
 }
 .modal-body {
     margin-bottom: var(--spacing-md);
 }
+
 .toast-container {
     position: fixed;
     bottom: var(--spacing-lg);
@@ -288,35 +284,12 @@ form .btn-group {
     box-shadow: var(--box-shadow);
     opacity: 0;
     transform: translateX(100%);
+    /* Animação de entrada definida em @keyframes */
     animation: slideIn 0.5s forwards;
 }
 .toast.hide {
+    /* Animação de saída definida em @keyframes */
     animation: slideOut 0.5s forwards;
-}
-.error-message {
-    color: var(--color-error); /* Vermelho */
-    font-size: 0.85rem;
-    font-weight: 500;
-    display: none; /* Escondido por padrão */
-    margin-top: -12px; /* Puxa para perto do input */
-    margin-bottom: 8px;
-}
-
-/* Quando o input estiver inválido (via JS), mostramos a msg */
-input.invalid + .error-message {
-    display: block;
-}
-
-/* Borda vermelha no input inválido */
-input.invalid {
-    border-color: var(--color-error);
-    box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
-}
-
-/* Borda verde no input válido */
-input.valid {
-    border-color: var(--color-success);
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
 @keyframes slideIn {
     to {
@@ -334,14 +307,46 @@ input.valid {
         transform: translateX(100%);
     }
 }
+
+.error-message {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: none;
+    margin-top: -12px;
+    margin-bottom: 8px;
+}
+
+/* Seletor adjacente: mostra msg se input anterior for inválido */
+input.invalid + .error-message {
+    display: block;
+}
+
+input.invalid {
+    border-color: var(--color-error);
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+}
+
+input.valid {
+    border-color: var(--color-success);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
 .gallery-image {
-    width: 500px; 
+    width: 300px;
     max-width: 100%;
     margin: 0 auto;
+    /* Mantém a proporção quadrada */
     aspect-ratio: 1 / 1; 
+    /* Redimensiona a imagem para cobrir a área */
     object-fit: cover; 
     object-position: center; 
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
