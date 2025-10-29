@@ -1,14 +1,19 @@
-/* 1. Menu principal - usando Flexbox */
 .main-nav > ul {
-    display: flex; /* alinha os itens do menu horizontalmente */
-    gap: var(--spacing-md); /* Espaçamento entre os links */
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Seletor de filho direto (>) para afetar só o menu principal */
+.main-nav > ul {
+    display: flex;
+    gap: var(--spacing-md);
 }
 
 .main-nav a {
-    font-family: var(--font-primary); /* Fonte Poppins */
+    font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1.1rem;
-    color: var(--color-primary-dark);
+    color: var(--color-text);
     text-decoration: none;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--border-radius);
@@ -21,23 +26,26 @@
     color: var(--color-primary-dark);
 }
 
-/* 2. Estrutura do Dropdown */
 .dropdown {
-    position: relative; /* Contexto para o menu flutuante */
+    /* Define o contexto para o posicionamento absoluto do filho */
+    position: relative; 
 }
 
 .dropdown-content {
-    display: none; /* Escondido por padrão */
-    position: absolute; /* Flutua sobre o conteúdo */
+    display: none;
+    /* Posiciona o submenu abaixo do item pai */
+    position: absolute; 
     top: 100%;
     left: 0;
-    background-color: var(--color-white);
+    background-color: var(--color-card-bg);
     min-width: 200px;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     padding: var(--spacing-sm) 0;
     z-index: 10;
 }
+
+/* Mostra o submenu ao passar o mouse no item pai */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -50,9 +58,8 @@
     font-weight: 400;
 }
 
-/* 3. Menu Hambúrguer (Mobile) */
 .hamburger-menu {
-    display: none; /* Escondido no Desktop */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
@@ -63,7 +70,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-icon);
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }

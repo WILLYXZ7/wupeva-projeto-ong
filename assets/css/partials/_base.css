@@ -1,36 +1,42 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: var(--font-secondary);
-    color: var(--color-neutral-dark);
+    color: var(--color-text);
     line-height: 1.6;
-    background-color: var(--color-white);
+    background-color: var(--color-background);
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
-    color: var(--color-primary-dark);
+    color: var(--color-text);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
+
 a {
     color: var(--color-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 a:hover {
     color: var(--color-secondary);
     text-decoration: underline;
 }
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
+
 ul, ol {
     list-style: none;
 }
