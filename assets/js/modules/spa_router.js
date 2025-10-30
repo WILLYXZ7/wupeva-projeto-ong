@@ -1,10 +1,8 @@
 let onContentLoadCallback;
 async function loadContent(path, mainContent) {
     try {
-        const response = await fetch(path);
-        if (!response.ok) {
-            throw new Error(`Erro ao carregar ${path}: ${response.statusText}`);
-        }
+        const minPath = path.replace('.html', '.min.html');
+        const response = await fetch(minPath);
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
