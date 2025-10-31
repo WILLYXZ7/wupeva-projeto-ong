@@ -317,7 +317,6 @@ form .btn-group {
     margin-bottom: 8px;
 }
 
-/* Seletor adjacente: mostra msg se input anterior for inválido */
 input.invalid + .error-message {
     display: block;
 }

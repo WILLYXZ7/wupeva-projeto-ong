@@ -1,10 +1,10 @@
-import { initNavigation } from './modules/navigation.min.js';
-import { initFormMasks } from './modules/form_masks.min.js';
-import { initFeedback } from './modules/feedback.min.js';
-import { initRouter } from './modules/spa_router.min.js';
-import { initFormValidation } from './modules/form_validation.min.js';
+import { initNavigation } from './modules/navigation.js';
+import { initFormMasks } from './modules/form_masks.js';
+import { initFeedback } from './modules/feedback.js';
+import { initRouter } from './modules/spa_router.js';
+import { initFormValidation } from './modules/form_validation.js';
 // Importa o novo módulo de tema
-import { initThemeSwitcher } from './modules/theme_switcher.min.js';
+import { initThemeSwitcher } from './modules/theme_switcher.js';
 
 // Agrupa scripts que rodam a cada carregamento de página do SPA
 function runPageSpecificScripts() {

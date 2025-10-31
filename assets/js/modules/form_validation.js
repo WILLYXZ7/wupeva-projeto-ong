@@ -1,11 +1,10 @@
 const validators = {
     nome: (input) => {
-        // Verifica se tem pelo menos duas palavras (nome e sobrenome)
         const parts = input.value.trim().split(' ');
-        if (parts.length < 2) {
+        if (parts.length < 2 || input.value.trim().length < 3) {
             return 'Por favor, digite seu nome completo.';
         }
-        return ''; // Válido
+        return '';
     },
     email: (input) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -15,20 +14,26 @@ const validators = {
         return '';
     },
     cpf: (input) => {
-        if (input.value.length < 14) {
-            return 'O CPF deve ter 11 dígitos.';
+        const cpfLimpo = input.value.replace(/\D/g, ''); 
+        const regex = /^\d{11}$/;
+        if (!regex.test(cpfLimpo)) {
+            return 'O CPF deve conter 11 números.';
         }
         return '';
     },
     telefone: (input) => {
-        if (input.value.length < 15) {
-            return 'O telefone deve ter 11 dígitos.';
+        const telLimpo = input.value.replace(/\D/g, '');
+        const regex = /^\d{10,11}$/; 
+        if (!regex.test(telLimpo)) {
+            return 'O telefone deve ter 10 ou 11 números.';
         }
         return '';
     },
     cep: (input) => {
-        if (input.value.length < 9) {
-            return 'O CEP deve ter 8 dígitos.';
+        const cepLimpo = input.value.replace(/\D/g, '');
+        const regex = /^\d{8}$/; 
+        if (!regex.test(cepLimpo)) {
+            return 'O CEP deve ter 8 números.';
         }
         return '';
     },
@@ -46,6 +51,7 @@ const validators = {
         return '';
     }
 };
+
 function showError(input, message) {
     const errorSpan = input.nextElementSibling;
     if (errorSpan && errorSpan.classList.contains('error-message')) {
@@ -55,6 +61,7 @@ function showError(input, message) {
     input.classList.add('invalid');
     input.classList.remove('valid');
 }
+
 function clearError(input) {
     const errorSpan = input.nextElementSibling;
     if (errorSpan && errorSpan.classList.contains('error-message')) {
@@ -64,6 +71,7 @@ function clearError(input) {
     input.classList.remove('invalid');
     input.classList.add('valid');
 }
+
 function validateField(input) {
     const validator = validators[input.id];
     if (validator) {
@@ -73,7 +81,7 @@ function validateField(input) {
             return false;
         }
     }
-    // Se o campo for obrigatório e estiver vazio (mas não tiver validador)
+    
     if (input.required && !input.value) {
         showError(input, 'Este campo é obrigatório.');
         return false;
@@ -83,33 +91,27 @@ function validateField(input) {
     return true;
 }
 
-// Função principal de inicialização
 export function initFormValidation() {
     const form = document.querySelector('form[novalidate]');
     if (!form) {
-        return; // Sai da função se não houver formulário na página
+        return;
     }
 
-    // Pega todos os campos que queremos validar (os que têm ID no objeto 'validators')
     const fieldsToValidate = form.querySelectorAll(Object.keys(validators).map(id => `#${id}`).join(', '));
     
-    // Validação em tempo real (quando o usuário sai do campo)
     fieldsToValidate.forEach(input => {
         input.addEventListener('blur', () => validateField(input));
     });
 
-    // Validação final ao tentar enviar
     form.addEventListener('submit', (e) => {
         let isFormValid = true;
         
-        // Valida todos os campos de uma vez
         fieldsToValidate.forEach(input => {
             if (!validateField(input)) {
                 isFormValid = false;
             }
         });
         
-        // Se qualquer campo for inválido, impede o envio
         if (!isFormValid) {
             e.preventDefault();
             alert('Por favor, corrija os erros no formulário antes de enviar.');

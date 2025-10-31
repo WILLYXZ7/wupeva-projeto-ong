@@ -1,8 +1,11 @@
 export function initNavigation() {
-    
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.main-nav');
+    const dropdownToggle = document.querySelector('.dropdown > a');
+    const dropdownMenu = document.querySelector('.dropdown-content');
+    const dropdownLi = document.querySelector('.dropdown');
 
+    // Lógica do Menu Hamburger
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
             // 1. Ativa/Desativa o menu
@@ -16,10 +19,8 @@ export function initNavigation() {
             hamburger.setAttribute('aria-expanded', !isExpanded);
         });
     }
-    const dropdownToggle = document.querySelector('.dropdown > a');
-    const dropdownMenu = document.querySelector('.dropdown-content');
-    const dropdownLi = document.querySelector('.dropdown');
 
+    // Lógica do Dropdown (para mobile)
     if (dropdownToggle && dropdownMenu && dropdownLi) {
         dropdownToggle.addEventListener('click', function(e) {
             // Só ativa no modo mobile (quando o hambúrguer está visível)
