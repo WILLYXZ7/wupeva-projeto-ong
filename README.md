@@ -1,6 +1,6 @@
 # WUPEVA - Projeto ONG (Front-End - WEB)
 
-![Capa do Projeto WUPEVA](assets/images/capa-wupeva.png)
+![Capa do Projeto WUPEVA](assets/images/capa-wupeva.png.png)
 
 ## 📖 Sobre o Projeto
 
@@ -93,3 +93,4 @@ A forma mais simples de executar é com a extensão **Live Server** do VS Code:
 * **Nickname:** WILLYXZ7
 * **LinkedIn:** [https://www.linkedin.com/in/wellyntoncardoso/](https://www.linkedin.com/in/wellyntoncardoso/)
 * **GitHub:** [https://github.com/WILLYXZ7](https://github.com/WILLYXZ7)
+
